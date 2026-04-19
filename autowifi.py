@@ -8,7 +8,7 @@ from netmiko import ConnectHandler
 # WRITE device information and configurations
 
 # Read json file containing aironet settings
-with open('autoAP-temp.json') as file:
+with open('wificonfig.json') as file:
     deviceData = json.load(file)
 
 # parse info from json file
