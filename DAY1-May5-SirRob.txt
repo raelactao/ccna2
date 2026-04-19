@@ -172,10 +172,10 @@ config t
 ip routing
 ip dhcp pool CAMERA6
 host 10.92.50.6 255.255.255.0
-client-identifier 001a.0704.7f5b
+client-identifier 001a.0709.bd03
 ip dhcp pool CAMERA8
 host 10.92.50.8 255.255.255.0
-client-identifier 001a.0709.c258 
+client-identifier 001a.070b.4716 
 end
 show ip dhcp binding
 
