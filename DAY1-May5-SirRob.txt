@@ -131,11 +131,11 @@ config t
 vlan 10
    name WIFIVLAN
 vlan 50
-   name IPCCTVLAN
+   name IPCAMERA
 vlan 69
-   name DELETEME
+   name NOC
 vlan 70
-    name SELLME
+    name SOC
 vlan 71
     name HR
 vlan 100
