@@ -111,3 +111,56 @@ conf t
    no shut
    ip add DHCP
    DO BP  
+
+
+####################### new client #######################
+
+D1, A1, P1: 10.0.2.101
+
+TELUS.COM, 10.0.0.0/8
+chevronvlan 350Agents
+
+Convert:	9b 
+Subtract:	/32 - 9 = /23	=> 8 8 7
+				=> 255.255.254.0
+				=> 3Octet,2i 
+Ipasok:		10.0.2.0
+
+Subnet: 10.0.2.0/8
+1st: 10.0.2.1
+exclude-add: 10.0.2.101
+last: 10.0.1.254
+broadcast: 10.0.1.255
+notYOURS: 10.0.2.0/8
+
+
+
+!@D1:
+config t
+   vlan 9
+      name chevronvlan 
+      exit
+   interface vlan 9
+      no shut
+      ip add 10.0.2.1 255.255.254.0
+      exit
+   ip dhcp excluded-add 10.0.2.1 10.0.2.100
+   ip dhcp pool chevronvlan 
+      NETWORK 10.0.2.0 255.255.254.0
+      DEFAULT-ROUTER 10.0.2.1
+      end
+
+!@A1:
+conf t
+   int e0/0
+   no shut 
+   switchport access vlan 9
+   do sh vlan bri
+
+!@P1:
+conf t
+   int e0/0
+   no shut
+   ip add DHCP
+   DO BP  
+
