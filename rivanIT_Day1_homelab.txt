@@ -1,0 +1,12 @@
+
+Rivan CCNA
+
+Day 1 Homelab
+
+
+Configure D1 & D2 as DHCP server for VLAN 10
+
+
+
+
+P1
