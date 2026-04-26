@@ -2,6 +2,10 @@
 
 ## Day 2 Homework
 
+### Diagram
+![alt text](image-10.png)
+
+
 ### P1 Exercise
 
 BDO VPN
