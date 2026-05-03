@@ -33,3 +33,26 @@ end
 
 10.1.4.4 = network address
 e1/1 10.1.4.6 = ip address
+
+
+BGP
+
+!@R1
+conf t
+ router bgp 1
+ bgp router-id 1.1.1.1
+ neighbor 209.9.9.3 remote-as 3
+ neighbor 207.7.7.2 remote-as 2
+ neighbor 208.8.8.4 remote-as 45
+ network 209.9.9.0 mask 255.255.255.0
+ network 207.7.7.0 mask 255.255.255.0
+ network 208.8.8.0 mask 255.255.255.0
+ network 10.1.1.0 mask 255.255.255.252
+ end
+
+for HW
+!@R1:
+CONFIG t
+router ospf 1
+Default-Information Originate
+end
