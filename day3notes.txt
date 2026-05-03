@@ -20,3 +20,16 @@ router ospf 1
 network 10.1.1.8 0.0.0.7 area 0
 network 172.16.48.0 0.0.15.255 area 0
 network 192.168.1.96 0.0.0.31 area 0
+
+
+config t
+router eigrp 100
+ no auto-summary
+ network 10.1.4.4 0.0.0.3
+ network 10.2.1.0 0.0.0.255
+ network 10.2.2.0 0.0.0.255
+ network 192.168.1.128 0.0.0.31
+end
+
+10.1.4.4 = network address
+e1/1 10.1.4.6 = ip address
