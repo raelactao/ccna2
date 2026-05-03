@@ -8,3 +8,15 @@ staticRoute:
 ip route 10.1.1.8 255.255.255.252 null 0
 ip route 172.16.48.0 255.255.240.0 null 0
 ip route 192.168.1.96 255.255.255.224 null 0
+
+EIGRP - the best, most easy:
+router eigrp 100
+network 10.1.1.8 0.0.0.7
+network 172.16.48.0 0.0.15.255
+network 192.168.1.96 0.0.0.31
+
+OSPF:
+router ospf 1
+network 10.1.1.8 0.0.0.7 area 0
+network 172.16.48.0 0.0.15.255 area 0
+network 192.168.1.96 0.0.0.31 area 0
